@@ -17,7 +17,7 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON('package.json'),
 
         publicPath: '_engine',
-        publicDistPath: 'dist',
+        publicDistPath: './',
 
         banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
         '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
@@ -175,9 +175,9 @@ module.exports = function (grunt) {
             dist: {
                 files: [{
                     expand: true,
-                    cwd: '.tmp/concat/scripts',
+                    cwd: '.tmp/concat/resources/scripts',
                     src: ['*.js', '!oldieshim.js'],
-                    dest: '.tmp/concat/scripts'
+                    dest: '.tmp/concat/resources/scripts'
                 }]
             }
         },
@@ -192,10 +192,10 @@ module.exports = function (grunt) {
         filerev: {
             dist: {
                 src: [
-                    '<%= publicDistPath %>/scripts/{,*/}*.js',
-                    '<%= publicDistPath %>/styles/{,*/}*.css',
-                    '<%= publicDistPath %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
-                    '<%= publicDistPath %>/styles/fonts/*'
+                    '<%= publicDistPath %>/resources/scripts/{,*/}*.js',
+                    '<%= publicDistPath %>/resources/styles/{,*/}*.css',
+                    '<%= publicDistPath %>/resources/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+                    '<%= publicDistPath %>/resources/styles/fonts/*'
                 ]
             }
         },
@@ -215,7 +215,7 @@ module.exports = function (grunt) {
         // concat, minify and revision files. Creates configurations in memory so
         // additional tasks can operate on them
         useminPrepare: {
-            html: '<%= publicPath %>/index.html',
+            html: '<%= publicDistPath %>/index.html',
             options: {
                 dest: '<%= publicDistPath %>',
                 flow: {
@@ -231,7 +231,7 @@ module.exports = function (grunt) {
 
         // Performs rewrites based on filerev and the useminPrepare configuration
         usemin: {
-            html: ['<%= publicDistPath %>/{,*/}*.html'],
+            html: ['<%= publicDistPath %>/*.html'],
             css: ['<%= publicDistPath %>/styles/{,*/}*.css'],
             options: {
                 assetsDirs: ['<%= publicDistPath %>', '<%= publicDistPath %>/images']
@@ -319,13 +319,13 @@ module.exports = function (grunt) {
         'html2js',
         'jshint:public',
         'wiredep',
+        'copy:dist',
         'useminPrepare',
         'copy:styles',
         'autoprefixer',
+        'cssmin',
         'concat',
         'ngAnnotate:dist',
-        'copy:dist',
-        'cssmin',
         'uglify',
         'filerev',
         'usemin'
