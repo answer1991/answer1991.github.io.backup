@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="50ade747-f50a-4490-a5fb-39157b69528b" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/scripts/scripts.7d120d46.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/scripts/template.9a0e0c21.js" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/_engine/modules/pages/prods.js" afterPath="$PROJECT_DIR$/_engine/modules/pages/pages.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gruntfile.js" afterPath="$PROJECT_DIR$/Gruntfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_engine/index.html" afterPath="$PROJECT_DIR$/_engine/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_engine/modules/app.js" afterPath="$PROJECT_DIR$/_engine/modules/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_engine/modules/common/layout/default/default.html" afterPath="$PROJECT_DIR$/_engine/modules/common/layout/default/default.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_engine/modules/common/layout/default/default.js" afterPath="$PROJECT_DIR$/_engine/modules/common/layout/default/default.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_engine/modules/pages/index/index.html" afterPath="$PROJECT_DIR$/_engine/modules/pages/index/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-    </list>
+    <list default="true" id="50ade747-f50a-4490-a5fb-39157b69528b" name="Default" comment="" />
     <ignored path="answer1991.github.io.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -103,8 +90,8 @@
       <file leaf-file-name="Gruntfile.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Gruntfile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="337" column="48" selection-start-line="337" selection-start-column="48" selection-end-line="337" selection-end-column="48" />
+            <state relative-caret-position="507">
+              <caret line="343" column="40" selection-start-line="343" selection-start-column="40" selection-end-line="343" selection-end-column="40" />
               <folding>
                 <element signature="e#9652#9830#0" expanded="false" />
               </folding>
@@ -579,12 +566,12 @@
       <option name="presentableId" value="Default" />
       <updated>1462814409728</updated>
       <workItem from="1462814412043" duration="333000" />
-      <workItem from="1462815891035" duration="13603000" />
+      <workItem from="1462815891035" duration="13833000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13936000" />
+    <option name="totallyTimeSpent" value="14166000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="41" y="23" width="1239" height="777" extended-state="6" />
@@ -1114,8 +1101,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Gruntfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="337" column="48" selection-start-line="337" selection-start-column="48" selection-end-line="337" selection-end-column="48" />
+        <state relative-caret-position="507">
+          <caret line="343" column="40" selection-start-line="343" selection-start-column="40" selection-end-line="343" selection-end-column="40" />
           <folding>
             <element signature="e#9652#9830#0" expanded="false" />
           </folding>
