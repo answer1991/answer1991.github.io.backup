@@ -1,0 +1,11 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 col-xs-12">
+            <ul>
+                <li ng-repeat="post in posts">
+                    <a ui-sref="pages.posts.view({file: post})">{{post}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

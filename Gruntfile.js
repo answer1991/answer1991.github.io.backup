@@ -267,9 +267,9 @@ module.exports = function (grunt) {
                     // },
                     {
                         expand: true,
-                        cwd: 'bower_components/bootstrap/dist',
+                        cwd: '<%= publicPath %>/bower_components/bootstrap/dist',
                         src: 'fonts/*',
-                        dest: '<%= publicDistPath %>'
+                        dest: '<%= publicDistPath %>/resources'
                     }]
             },
             styles: {
@@ -331,14 +331,17 @@ module.exports = function (grunt) {
         'usemin'
     ]);
 
+    // Default task.
+    grunt.registerTask('build-index', require('./_engine/grunt_tasks/posts-index'));
+
     // local task.
-    grunt.registerTask('local', ['public-test', 'connect:livereload', 'watch']);
+    grunt.registerTask('local', ['build-index', 'public-test', 'test', 'connect:livereload', 'watch']);
 
     // dist task
-    grunt.registerTask('dist', ['public-prod', 'connect:dist']);
+    grunt.registerTask('dist', ['build-index', 'public-prod', 'connect:dist']);
 
     // Default task.
-    grunt.registerTask('build', ['public-prod']);
+    grunt.registerTask('build', ['build-index', 'public-prod']);
 
     //console.log(grunt.config());
 };

@@ -15,6 +15,7 @@ angular
         'ngTouch',
         'ui.router',
         'ngMarkdown',
+        'answer1991.github.io.core',
         'answer1991.github.io.common',
         'answer1991.github.io.pages',
         'answer1991.github.io.tpls'

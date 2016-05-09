@@ -26,6 +26,9 @@
     "grunt-shell": "~1.1.2",
     "grunt-usemin": "~3.1.1",
     "grunt-wiredep": "~2.0.0",
-    "load-grunt-tasks": "~3.3.0"
+    "load-grunt-tasks": "~3.3.0",
+    "lodash": "^4.12.0",
+    "q": "^1.4.1",
+    "q-io": "^1.13.2"
   }
 }
