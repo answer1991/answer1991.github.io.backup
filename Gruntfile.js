@@ -205,8 +205,8 @@ module.exports = function (grunt) {
                     dot: true,
                     src: [
                         '.tmp',
-                        '<%= publicDistPath %>/{,*/}*',
-                        '!<%= publicDistPath %>/.git{,*/}*'
+                        '<%= publicDistPath %>/index.html',
+                        '<%= publicDistPath %>/resources{,*/}*'
                     ]
                 }]
             }
@@ -338,7 +338,7 @@ module.exports = function (grunt) {
     grunt.registerTask('dist', ['public-prod', 'connect:dist']);
 
     // Default task.
-    grunt.registerTask('build', ['public-prod', 'shell:removeZip', 'shell:printTimestamp', 'compress']);
+    grunt.registerTask('build', ['public-prod']);
 
     //console.log(grunt.config());
 };
