@@ -7,7 +7,8 @@
 angular
     .module('answer1991.github.io.pages', [
         'answer1991.github.io.pages.index',
-        'answer1991.github.io.pages.posts'
+        'answer1991.github.io.pages.posts',
+        'answer1991.github.io.pages.page'
     ])
     .config([
         '$stateProvider',

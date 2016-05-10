@@ -12,7 +12,14 @@ angular
                 url: '/view/{file}',
                 templateUrl: 'modules/pages/posts/view/view.html',
                 resolve: {
-                    file: [
+                    post: [
+                        '$stateParams',
+                        'postService',
+                        function ($stateParams, postService) {
+                            return postService.formatPost($stateParams.file);
+                        }
+                    ],
+                    content: [
                         'httpWrapper',
                         '$stateParams',
                         function (httpWrapper, $stateParams) {
@@ -25,9 +32,11 @@ angular
                 },
                 controller: [
                     '$scope',
-                    'file',
-                    function ($scope, file) {
-                        $scope.file = file;
+                    'post',
+                    'content',
+                    function ($scope, post, content) {
+                        $scope.post = post;
+                        $scope.content = content;
                     }
                 ]
             });

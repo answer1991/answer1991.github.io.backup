@@ -17,21 +17,41 @@ angular
                     posts: [
                         'httpWrapper',
                         '$stateParams',
-                        function (httpWrapper, $stateParams) {
+                        'postService',
+                        function (httpWrapper, $stateParams, postService) {
                             return httpWrapper.get('_posts/' + $stateParams.path + '/index.json')
                                 .then(function (data) {
                                     return data.files;
                                 })
                                 .then(function (files) {
-                                    return files;
+                                    var posts = _.compact(
+                                        _.map(files, function (file) {
+                                            return postService.formatPost(file);
+                                        })
+                                    );
+
+                                    posts.sort(function (post1, post2) {
+                                        return post2.date.getTime() - post1.date.getTime();
+                                    });
+
+                                    return posts;
                                 });
+                        }
+                    ],
+                    title: [
+                        'pathTitleMap',
+                        '$stateParams',
+                        function (pathTitleMap, $stateParams) {
+                            return pathTitleMap[$stateParams.path] || $stateParams.path;
                         }
                     ]
                 },
                 controller: [
                     '$scope',
                     'posts',
-                    function ($scope, posts) {
+                    'title',
+                    function ($scope, posts, title) {
+                        $scope.title = title;
                         $scope.posts = posts;
                     }
                 ]

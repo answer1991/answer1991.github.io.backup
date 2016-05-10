@@ -1,28 +1,48 @@
-<nav class="navbar navbar-default navbar-static-top">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" ui-sref="pages.index">Blogs</a>
-        </div>
-
-        <!--Collect the nav links, forms, and other content for toggling-->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li ng-repeat="nav in navs">
-                    <a ui-sref="pages.posts.list({path: nav.path})">
-                        {{ nav.title }}
-                    </a>
-                </li>
-            </ul>
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-</nav>
-
-<div ui-view></div>
+<div class="container">
+    <header class="masthead">
+        <h3 class="masthead-title">
+            <a ui-sref="pages.index" title="Home">@answer1991</a>
+        </h3>
+        <ul class="nav">
+            <li ng-repeat="nav in navs">
+                <a ui-sref="pages.posts.list({path: nav.path})">
+                    {{ nav.title }}
+                </a>
+            </li>
+            <li ng-repeat="page in pages">
+                <a ui-sref="pages.page({path: page.path})">
+                    {{ page.title }}
+                </a>
+            </li>
+        </ul>
+    </header>
+    <div class="body">
+        <div ui-view></div>
+    </div>
+    <div class="footer">
+        <p>
+            Made with all the love in the world by <a href="https://github.com/answer1991">@answer1991</a>.
+        </p>
+        <p>
+            Open sourced under MIT.
+        </p>
+        <p>
+            Build with nodejs, Grunt, AngularJs.
+        </p>
+        <p>
+            Style Design From <a href="https://twitter.com/mdo">@mdo</a>.
+        </p>
+        <ul class="quick-links">
+            <li>
+                <iframe class="github-btn"
+                        src="http://ghbtns.com/github-btn.html?user=answer1991&amp;repo=answer1991.github.io&amp;type=watch&amp;count=true"
+                        allowtransparency="true" frameborder="0" scrolling="0" width="112" height="20"></iframe>
+            </li>
+            <li>
+                <iframe class="github-btn"
+                        src="http://ghbtns.com/github-btn.html?user=answer1991&amp;repo=answer1991.github.io&amp;type=fork&amp;count=true"
+                        allowtransparency="true" frameborder="0" scrolling="0" width="112" height="20"></iframe>
+            </li>
+        </ul>
+    </div>
+</div>

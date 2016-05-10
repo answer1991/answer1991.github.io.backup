@@ -335,7 +335,7 @@ module.exports = function (grunt) {
     grunt.registerTask('build-index', require('./_engine/grunt_tasks/posts-index'));
 
     // local task.
-    grunt.registerTask('local', ['build-index', 'public-test', 'test', 'connect:livereload', 'watch']);
+    grunt.registerTask('local', ['build-index', 'public-test', 'connect:livereload', 'watch']);
 
     // dist task
     grunt.registerTask('dist', ['build-index', 'public-prod', 'connect:dist']);

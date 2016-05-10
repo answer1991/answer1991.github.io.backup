@@ -9,6 +9,7 @@ angular.module('answer1991.github.io.common.layout.default', [])
     .config([
         '$stateProvider',
         function ($stateProvider) {
+
             $stateProvider.state('layout.default', {
                 abstract: true,
                 templateUrl: 'modules/common/layout/default/default.html',
@@ -44,10 +45,40 @@ angular.module('answer1991.github.io.common.layout.default', [])
                                 };
                             });
                         }
+                    ],
+                    pageTitleMap: [
+                        'httpWrapper',
+                        function (httpWrapper) {
+                            return httpWrapper.get('_pages/config.json')
+                                .then(function (data) {
+                                    return data.pathTitleMap || {};
+                                }, function () {
+                                    return {};
+                                });
+                        }
+                    ],
+                    pages: [
+                        'httpWrapper',
+                        'pageTitleMap',
+                        'pageService',
+                        function (httpWrapper, pageTitleMap, pageService) {
+                            return httpWrapper.get('_pages/index.json')
+                                .then(function (data) {
+                                    return data.files;
+                                }, function () {
+                                    return [];
+                                })
+                                .then(function (files) {
+                                    return _.map(files, function (file) {
+                                        return pageService.formatPage(file, pageTitleMap);
+                                    });
+                                });
+                        }
                     ]
                 },
-                controller: function ($scope, navs) {
+                controller: function ($scope, navs, pages) {
                     $scope.navs = navs;
+                    $scope.pages = pages;
                 }
             });
         }

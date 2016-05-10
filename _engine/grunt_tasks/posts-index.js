@@ -109,5 +109,8 @@ module.exports = function () {
                     return setIndex(directory);
                 })
             );
-        });
+        })
+        .then(function () {
+            return setIndex('_pages');
+        })
 };
